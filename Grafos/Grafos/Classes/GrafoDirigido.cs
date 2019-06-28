@@ -50,7 +50,7 @@ namespace Grafos.Classes.System {
             return grau;
         }
 
-        public int grauSaida(string v) {
+        public int getGrauSaida(string v) {
             int grau = 0;
             foreach(Aresta a in vertices) {
                 if (a.getVerticeFinal() != null && (a.getVerticeInicial().getNome().Equals(v))) {
@@ -84,14 +84,63 @@ namespace Grafos.Classes.System {
             try {
                 int resposta = int.Parse(resp);
                 switch (resposta) {
-                    default:
-                        break;
+                    case 1: return this.preGetGrauEntrada();
+                    case 2: return this.preGetGrauSaida();
+                    case 3: return this.preHasCiclo();
+                    default: return "";
                 }
             }
-            catch (Exception) {
+            catch (Exception ex) {
 
-                throw;
+                Console.WriteLine("Erro ao converter a resposta " + ex.Message);
+                return "0";
             }
         }
-    }
+        public string preHasCiclo() {
+            Console.Clear();
+            Home.getCabecalho();
+            Console.WriteLine("|       Verifica se possui CICLO.                |");
+            Console.WriteLine("+------------------------------------------------+");
+            bool retorno = this.getCiclo();
+            Console.WriteLine();
+            if (retorno == true) {
+                Console.WriteLine("O grafo possui ciclo");
+                Console.WriteLine();
+            }
+            else {
+                Console.WriteLine("O grafo é aciclico (Não possui ciclos)");
+            }
+            return Console.ReadLine();
+        }
+
+        private string preGetGrauSaida() {
+            Console.Clear();
+            Home.getCabecalho();
+            Console.WriteLine("|       Quantidade de GRAU SAIDA do vértice.     |");
+            Console.WriteLine("+------------------------------------------------+");
+            Console.WriteLine("Digite o nome do Vértice: ");
+            string v1 = Console.ReadLine();
+            int retorno = this.getGrauSaida(v1);
+            Console.WriteLine();
+            Console.WriteLine("O vértice " + v1 + " possui " + retorno + " graus de Saída");
+            Console.WriteLine();
+            Console.WriteLine("Pressione 0 (zero) para sair ou qualquer tecla para voltar ao MENU");
+            return Console.ReadLine();
+        }
+
+        private string preGetGrauEntrada() {
+            Console.Clear();
+            Home.getCabecalho();
+            Console.WriteLine("|       Quantidade de GRAU ENTRADA do vértice.   |");
+            Console.WriteLine("+------------------------------------------------+");
+            Console.WriteLine("Digite o nome do Vértice: ");
+            string v1 = Console.ReadLine();
+            int retorno = this.getGrauEntrada(v1);
+            Console.WriteLine();
+            Console.WriteLine("O vértice " + v1 + " possui " + retorno + " graus de Entrada");
+            Console.WriteLine();
+            Console.WriteLine("Pressione 0 (zero) para sair ou qualquer tecla para voltar ao MENU");
+            return Console.ReadLine();
+        }
+    } 
 }
