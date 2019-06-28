@@ -27,10 +27,10 @@ namespace Grafos.Classes.System {
             return this.peso;
         }
 
-        public Vertice getVerticeInicial() {
+        public Vertice getIniVertice() {
             return this.verticeInicial;
         }
-        public Vertice getVerticeFinal() {
+        public Vertice getFimVertice() {
             return this.verticeFinal;
          
         }

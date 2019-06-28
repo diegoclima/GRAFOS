@@ -10,17 +10,21 @@ namespace Grafos.Classes.System {
         protected int totalVerticesGrafo = 0;
 
         public Grafo() { }
-
-        public override string ToString() {
-            string retorno = " ";
-            foreach(Aresta a in this.vertices) {
-                retorno += "| " + a.getVerticeInicial().getNome() + "-> " + (a.getVerticeFinal() == null ? " " : a.getVerticeFinal().getNome())
+        /// <summary>
+        /// Metodo Imprime grafo
+        /// </summary>
+        /// <returns></returns>
+        public string toString() {
+            string retorno = "";
+            foreach (Aresta a in this.vertices) {
+                retorno += " | " + a.getIniVertice().getNome() + " -> " + (a.getFimVertice() == null ? "" : a.getFimVertice().getNome());
             }
             return retorno;
         }
 
-        public virtual string setReposta(string resp) {
-            return resp;
+        public virtual string setResposta(string respString) {
+            return respString;
         }
+
     }
 }

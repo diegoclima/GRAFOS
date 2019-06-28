@@ -32,7 +32,7 @@ namespace Grafos.Classes.System {
         public int getGrauEntrada(string v1) {
             int grau = 0;
             foreach (Aresta a in vertices) {
-                if (a.getVerticeFinal()!=null && (a.getVerticeFinal().getNome().Equals(v1))) {
+                if (a.getFimVertice()!=null && (a.getFimVertice().getNome().Equals(v1))) {
                     grau++;
                 }
             }
@@ -42,7 +42,7 @@ namespace Grafos.Classes.System {
         public int getGrauSaida(string v) {
             int grau = 0;
             foreach (Aresta aresta in vertices) {
-                if (aresta.getVerticeInicial().getNome().Equals(v)) {
+                if (aresta.getIniVertice().getNome().Equals(v)) {
                     grau++;
                 }
             }

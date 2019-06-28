@@ -35,12 +35,12 @@ namespace Grafos.Classes.System {
             int grau = 0;
             foreach (Aresta aresta in vertices) {
 
-                if (aresta.getVerticeFinal()!=null && (aresta.getVerticeInicial().getNome().Equals(v))) {
+                if (aresta.getFimVertice()!=null && (aresta.getIniVertice().getNome().Equals(v))) {
                     if (aresta.getDirecao().Equals(1)) {
                         grau++;
                     }
                 }
-                if (aresta.getVerticeFinal()!=null && (aresta.getVerticeFinal().getNome().Equals(v))) {
+                if (aresta.getFimVertice()!=null && (aresta.getFimVertice().getNome().Equals(v))) {
                     if (aresta.getDirecao().Equals(-1)) {
                         grau++;
                     }
@@ -53,12 +53,12 @@ namespace Grafos.Classes.System {
         public int getGrauSaida(string v) {
             int grau = 0;
             foreach(Aresta a in vertices) {
-                if (a.getVerticeFinal() != null && (a.getVerticeInicial().getNome().Equals(v))) {
+                if (a.getFimVertice() != null && (a.getIniVertice().getNome().Equals(v))) {
                     if (a.getDirecao().Equals(-1)) {
                         grau++;
                     }
                 }
-                if (a.getVerticeFinal()!=null &&(a.getVerticeFinal().getNome().Equals(v))) {
+                if (a.getFimVertice()!=null &&(a.getFimVertice().getNome().Equals(v))) {
                     if (a.getDirecao().Equals(1)) {
                         grau++;
                     }

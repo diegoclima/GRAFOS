@@ -48,6 +48,7 @@
     <Compile Include="Classes\Grafo.cs" />
     <Compile Include="Classes\GrafoDirigido.cs" />
     <Compile Include="Classes\GrafoDirigidoCopia.cs" />
+    <Compile Include="Classes\GrafoNaoDirigido.cs" />
     <Compile Include="Classes\Vertice.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
